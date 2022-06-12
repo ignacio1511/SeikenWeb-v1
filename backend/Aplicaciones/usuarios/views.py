@@ -47,7 +47,22 @@ def userCreate(request):
     if serializer.is_valid():
         serializer.save()
 
-    print("SERLIZER DATA ... ", serializer.data)
+    first_name = serializer.data.get("first_name")
+    email_recipient = [serializer.data.get("email")]
+    objetivo = serializer.data.get("objetivo")
+    subject = "¡Rutina Seiken!"
+
+    if objetivo == "perder_grasa":
+        body = f"Hola {first_name}, tu objetivo es perder grasa"
+        send_mail(subject, body, settings.EMAIL_HOST_USER, email_recipient)
+
+    elif objetivo == "ganar_musculo":
+        body = f"Hola {first_name}, tu objetivo es ganar musculo"
+        send_mail(subject, body, settings.EMAIL_HOST_USER, email_recipient)
+
+    elif objetivo == "ambos":
+        body = f"Hola {first_name}, tu objetivo es perder grasa y ganar musculo"
+        send_mail(subject, body, settings.EMAIL_HOST_USER, email_recipient)
 
     return Response(serializer.data)
 
