@@ -50,19 +50,35 @@ def userCreate(request):
     first_name = serializer.data.get("first_name")
     email_recipient = [serializer.data.get("email")]
     objetivo = serializer.data.get("objetivo")
+    nivel = serializer.data.get("nivel")
+
     subject = "¡Rutina Seiken!"
 
+    rutina_nivel1 = "link"
+    rutina_nivel2 = "link2"
+    rutina_nivel3 = "link3"
+
+    rutina_a_enviar = ""
+
+    if nivel == 1:
+        rutina_a_enviar = rutina_nivel1
+
+    elif nivel == 2:
+        rutina_a_enviar = rutina_nivel2
+
+    elif nivel == 3:
+        rutina_a_enviar = rutina_nivel3
+
     if objetivo == "perder_grasa":
-        body = f"Hola {first_name}, tu objetivo es perder grasa"
-        send_mail(subject, body, settings.EMAIL_HOST_USER, email_recipient)
+        body = f"Hola {first_name}, tu objetivo es perder grasa. \n Descarga tu rutina aqui: {rutina_a_enviar}"
 
     elif objetivo == "ganar_musculo":
-        body = f"Hola {first_name}, tu objetivo es ganar musculo"
-        send_mail(subject, body, settings.EMAIL_HOST_USER, email_recipient)
+        body = f"Hola {first_name}, tu objetivo es ganar musculo \n Descarga tu rutina aqui: {rutina_por_enviar}"
 
     elif objetivo == "ambos":
-        body = f"Hola {first_name}, tu objetivo es perder grasa y ganar musculo"
-        send_mail(subject, body, settings.EMAIL_HOST_USER, email_recipient)
+        body = f"Hola {first_name}, tu objetivo es perder grasa y ganar musculo \n Descarga tu rutina aqui: {rutina_por_enviar}"
+
+    send_mail(subject, body, settings.EMAIL_HOST_USER, email_recipient)
 
     return Response(serializer.data)
 

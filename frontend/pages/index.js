@@ -1,8 +1,12 @@
 import Contact from '../components/Contact'
 import Container from '../components/Container'
 import Hero from '../components/Hero'
+import {useEffect} from 'react'
+import {useRouter} from 'next/router'
 
 const Home = ({posts})=> {
+
+    
     return (
         <>
         {console.log(posts)}

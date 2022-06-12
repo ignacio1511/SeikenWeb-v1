@@ -37,18 +37,25 @@ class CustomAccountManager(BaseUserManager):
 class NewUser(AbstractBaseUser, PermissionsMixin):
 
     code = models.AutoField(_("id"), primary_key=True)
-    email = models.EmailField(_("email address"), null=True, unique=True)
+    email = models.EmailField(_("email address"), null=False, unique=True)
     username = models.CharField(max_length=40, blank=True)
-    first_name = models.CharField(max_length=50, null=True)
-    last_name = models.CharField(max_length=50, null=True)
+    first_name = models.CharField(max_length=50, null=False)
+    last_name = models.CharField(max_length=50, null=False)
 
     objetivos_fitness = [
         ("perder_grasa", "Quiero bajar de peso lo antes posible"),
         ("ganar_musculo", "Quiero ganar músculo aceleradamente"),
         ("ambos", "Quiero definir mi cuerpo"),
     ]
+    objetivo = models.CharField(choices=objetivos_fitness, max_length=50, null=False)
 
-    objetivo = models.CharField(choices=objetivos_fitness, max_length=50, null=True)
+    niveles = [
+        ("1", "Nivel 1: soy un Seiken iniciando con todo"),
+        ("2", "Nivel 2: +15 planchas y 5 dominadas"),
+        ("3", "Nivel 3: +5 planchas una mano y +10 dominadas"),
+    ]
+    nivel = models.CharField(_("Nivel"), choices=niveles, max_length=350, null=False)
+
     start_date = models.DateTimeField(auto_now_add=True)
     about = models.TextField(_("about"), max_length=500, blank=True)
     is_staff = models.BooleanField(default=False)

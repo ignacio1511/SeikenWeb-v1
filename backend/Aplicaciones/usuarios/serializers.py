@@ -8,4 +8,4 @@ from .models import NewUser
 class CustomUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = NewUser
-        fields = ("code", "email", "first_name", "last_name", "objetivo")
+        fields = ("code", "email", "first_name", "last_name", "objetivo", "nivel")
