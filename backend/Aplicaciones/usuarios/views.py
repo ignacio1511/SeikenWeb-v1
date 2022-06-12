@@ -1,3 +1,5 @@
+from django.conf import settings
+from django.core.mail import send_mail
 from django.http import JsonResponse
 from rest_framework import generics, status
 from rest_framework.decorators import api_view
@@ -44,6 +46,9 @@ def userCreate(request):
 
     if serializer.is_valid():
         serializer.save()
+
+    print("SERLIZER DATA ... ", serializer.data)
+
     return Response(serializer.data)
 
 

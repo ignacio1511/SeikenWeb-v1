@@ -48,7 +48,7 @@
 #     created_at = models.DateTimeField(auto_now_add=True, blank=False)
 
 
-# class User(models.Model):
+# class User(models.backend):
 #     user_id = models.AutoField(primary_key=True)
 #     full_name = models.CharField(max_length=100, blank=True)
 #     created_at = models.DateTimeField(auto_now_add=True, blank=False)
