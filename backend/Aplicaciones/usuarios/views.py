@@ -60,25 +60,26 @@ def userCreate(request):
 
     rutina_a_enviar = ""
 
-    if nivel == 1:
+    if nivel == "1":
         rutina_a_enviar = rutina_nivel1
 
-    elif nivel == 2:
+    elif nivel == "2":
         rutina_a_enviar = rutina_nivel2
 
-    elif nivel == 3:
+    elif nivel == "3":
         rutina_a_enviar = rutina_nivel3
 
     if objetivo == "perder_grasa":
         body = f"Hola {first_name}, tu objetivo es perder grasa. \n Descarga tu rutina aqui: {rutina_a_enviar}"
+        send_mail(subject, body, settings.EMAIL_HOST_USER, email_recipient)
 
     elif objetivo == "ganar_musculo":
-        body = f"Hola {first_name}, tu objetivo es ganar musculo \n Descarga tu rutina aqui: {rutina_por_enviar}"
+        body = f"Hola {first_name}, tu objetivo es ganar musculo \n Descarga tu rutina aqui: {rutina_a_enviar}"
+        send_mail(subject, body, settings.EMAIL_HOST_USER, email_recipient)
 
     elif objetivo == "ambos":
-        body = f"Hola {first_name}, tu objetivo es perder grasa y ganar musculo \n Descarga tu rutina aqui: {rutina_por_enviar}"
-
-    send_mail(subject, body, settings.EMAIL_HOST_USER, email_recipient)
+        body = f"Hola {first_name}, tu objetivo es perder grasa y ganar musculo \n Descarga tu rutina aqui: {rutina_a_enviar}"
+        send_mail(subject, body, settings.EMAIL_HOST_USER, email_recipient)
 
     return Response(serializer.data)
 

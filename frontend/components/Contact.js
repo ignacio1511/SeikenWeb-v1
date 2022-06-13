@@ -121,8 +121,8 @@ export default function Contact() {
 
                     <select 
                     className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
-                    value={objetivo} 
-                    onChange={(e) => setObjetivo(e.target.value)}
+                    value={nivel} 
+                    onChange={(e) => setNivel(e.target.value)}
                     >
                         <option type="text" value="1">Nivel 1: soy un Seiken iniciando con todo</option>
                         <option type="text" value="2">Nivel 2: +15 planchas y 5 dominadas</option>
