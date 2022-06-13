@@ -14,7 +14,7 @@ const ThankYou = () => {
 
           <section className='grid place-items-center mt-4'>
               <h1 className='text-xl text-center'>¡Felicitaciones! Tu rutina va en camino.</h1>
-              <p className='text-xs mt-2 text-center'> Revisa tu bandeja de entrada. La rutina tardará a lo mucho 5 minutos en llega.</p>
+              <p className='text-xs mt-2 text-center'> Revisa tu bandeja de entrada. La rutina tardará a lo mucho 5 minutos en llegar.</p>
               <b><p className='text-xs mt-2 text-center'>¡A darle con todo!</p></b>
           </section>
 
