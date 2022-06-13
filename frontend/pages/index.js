@@ -1,6 +1,7 @@
 import Contact from '../components/Contact'
 import Container from '../components/Container'
 import Hero from '../components/Hero'
+import Footer from '../components/Footer'
 import {useEffect} from 'react'
 import {useRouter} from 'next/router'
 

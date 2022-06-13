@@ -19,7 +19,7 @@ const Container = ({titulo,children}) =>(
         <div>
             {children}
         </div>
- 
+        <Footer/>
     </div>
 )
 export default Container;
