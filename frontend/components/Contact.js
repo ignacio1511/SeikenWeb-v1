@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {useEffect} from 'react'
 import {useRouter} from 'next/router'
+import { Router } from 'react-router-dom'
 
 export default function Contact() {
 
@@ -9,9 +10,9 @@ export default function Contact() {
     const [email, setEmail] = useState('')
     const [objetivo, setObjetivo] = useState('perder_grasa')
     const [nivel, setNivel] = useState('1')
-    // const router = useRouter();
+    const router = useRouter();
 
-    // function handleEffect() {
+
     //     useEffect(() => {
 
     //         setTimeout(() => {
@@ -37,6 +38,8 @@ export default function Contact() {
             console.log("Nuevo usuario añadido")
             console.log(usuario)
         })
+
+        router.push('/thank-you')
     } 
     
 
@@ -129,7 +132,7 @@ export default function Contact() {
                         <option type="text" value="3">Nivel 3: +5 planchas una mano y +10 dominadas</option>
                     </select>
 
-                    {<button onClick={handleSubmit}
+                    {<button 
                     class="mt-3 mb-4 btn btn-primary bg-orange-700"
                     >Descarga la rutina GRATIS
                     </button>}

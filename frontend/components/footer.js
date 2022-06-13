@@ -1,6 +1,6 @@
 import React from "react";
 
-import { FaCopyright } from "react-icons/fa";
+import { BsFillCheckSquareFill } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
@@ -21,3 +21,4 @@ const Footer = () => {
   )
 }
 export default Footer 
+
