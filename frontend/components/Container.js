@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link';
 import Navigation from './navigation'
-import Footer from './footer'
+import Footer from './Footer'
 import Hero from './Hero'
 
 const Container = ({titulo,children}) =>(
