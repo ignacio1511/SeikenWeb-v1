@@ -10,7 +10,7 @@ const Hero=(props)=>{
                     <h1 className='text-center text-2xl lg:text-5xl text-white'> Transforma tu cuerpo entrenando 3 veces por semana y sin hacer dieta </h1>
                     <p className='text-center text-sm text-white container mt-3'>Somos Seiken, una comunidad de jovenes emprendedores que buscamos potenciar nuestra salud y condición física, sin dejar de lado nuestras demás responsabilidades. </p>
                     <Link href="#Datos-contactos">
-                        <button type="submit" class="mt-4 mx-10 justify-center btn btn-primary bg-orange-700" name="action" valu="submit" data-toggle="button" aria-pressed="false" autocomplete="off">Descarga la rutina GRATIS</button> 
+                        <button type="submit" className="mt-4 mx-10 justify-center btn btn-primary bg-orange-700" name="action" valu="submit" data-toggle="button" aria-pressed="false" autoComplete="off">Descarga la rutina GRATIS</button> 
                     </Link>
                 </div>
             </section>

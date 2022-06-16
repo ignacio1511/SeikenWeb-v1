@@ -57,11 +57,11 @@ export default function Contact() {
                 <b><p className='mt-3'>Esta rutina está valorada en US$9.99, pero podrás descargarla completamente gratis por el lanzamiento de nuestra web. </p></b>
                 </section>
             
-                <label class="block mt-4">
+                <label className="block mt-4">
                     <form onSubmit={handleSubmit}>
 
                         <span 
-                        class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                        className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                             Nombre
                         </span>
 
@@ -74,7 +74,7 @@ export default function Contact() {
                         />
 
                         <span 
-                        class="mt-1 after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                        className="mt-1 after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                             Apellido
                         </span>
 
@@ -88,7 +88,7 @@ export default function Contact() {
                         />
 
                         <span 
-                        class="mt-1 after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                        className="mt-1 after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                             Correo electronico
                         </span>
 
@@ -103,7 +103,7 @@ export default function Contact() {
 
 
                         <span 
-                        class="mt-1 after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                        className="mt-1 after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                             ¿Cual es tu objetivo?
                         </span>
 
@@ -118,7 +118,7 @@ export default function Contact() {
                         </select>
 
                         <span 
-                        class="mt-1 after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                        className="mt-1 after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                             ¿En qué nivel te encuentras?
                         </span>
 
@@ -133,7 +133,7 @@ export default function Contact() {
                         </select>
 
                         {<button 
-                        class="mt-3 mb-4 btn btn-primary bg-orange-700"
+                        className="mt-3 mb-4 btn btn-primary bg-orange-700"
                         >Descarga la rutina GRATIS
                         </button>}
 
