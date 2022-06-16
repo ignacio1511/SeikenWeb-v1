@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
+import django_heroku
 import environ
 
 env = environ.Env()
@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-n1_qqeism*s&$hedr*3y7djugj=rt950og&^v9()6394wdhwmr"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DJANGO_DEBUG', default= False)
 
 ALLOWED_HOSTS = ["*"]
 
@@ -189,9 +189,25 @@ REST_FRAMEWORK = {
 }
 
 
+STATIC_TMP =  os.path.join(BASE_DIR,'static')
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+os.makedirs(STATIC_TMP, exist_ok = True)
+os.makedirs(STATIC_ROOT, exist_ok = True)
+STATIC_DIRS = (
+    os.path.join(BASE_DIR,'static')
+)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = env("EMAIL_HOST")
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = env("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
+
+
+if config('DJANGO_PRODUCTION', default=False, cast=bool):
+    from .settings_production import *
